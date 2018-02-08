@@ -1,0 +1,42 @@
+{
+  "name": "electron-react-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "foreman": "^2.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.0"
+  },
+  "scripts": {
+    "dev": "nf start",
+    "start": "BROWSER=none react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "ebuild": "yarn build && node_modules/.bin/build",
+    "packBuild": "rimraf electron-react-app-* && electron-packager . --platform=darwin,win32,linux --arch=x64 --icon=icon"
+  },
+  "description": "React and Electron Awesome App",
+  "homepage": "./",
+  "main": "electron/main.js",
+  "build": {
+    "productName": "React Electron App",
+    "appId": "com.cegeka.electronReactFun",
+    "electronVersion": "1.7.12",
+    "files": [
+      "build/**/*",
+      "electron/*"
+    ],
+    "win": {
+      "target": "squirrel",
+      "icon": "icon.ico"
+    }
+  },
+  "devDependencies": {
+    "electron": "^1.8.1",
+    "electron-packager": "^10.1.2",
+    "rimraf": "^2.6.2"
+  }
+}
