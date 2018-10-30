@@ -44,12 +44,14 @@ function createWindow () {
                 label: 'Increment',
                 click: () => {
                     win.webContents.send('increment')
-                }
+                },
+                accelerator: 'CmdOrCtrl+Up'
             }, {
                 label: 'Decrement',
                 click: () => {
                     win.webContents.send('decrement')
-                }
+                },
+                accelerator: 'CmdOrCtrl+Down'
             }]
         }
     ]

@@ -12,7 +12,6 @@ class App extends Component<Props, State> {
   }
 
   componentDidMount = () => {
-
     ipcRenderer.on('increment', () => {
       this.increment()
     })
@@ -20,10 +19,10 @@ class App extends Component<Props, State> {
     ipcRenderer.on('decrement', () => {
       this.decrement()
     })
-
   }
 
   increment = () => {
+    // declarative way - do not alter the DOM directly
     this.setState({ count: this.state.count + 1 })
   }
 
@@ -32,9 +31,6 @@ class App extends Component<Props, State> {
   }
 
   render = () => {
-    
-    
-
     return (
       <div className="App">
         <header className="App-header">
